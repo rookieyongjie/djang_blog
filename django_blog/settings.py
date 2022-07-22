@@ -178,7 +178,7 @@ EMAIL_HOST = 'smtp.qq.com'
 # 改为你自己的邮箱名！
 EMAIL_HOST_USER = 'rookiejie@foxmail.com'
 # 你的邮箱密码
-EMAIL_HOST_PASSWORD = 'rvteiyzeiqhqbdbe'
+EMAIL_HOST_PASSWORD = ''
 # 发送邮件的端口
 EMAIL_PORT = 25
 # 是否使用 TLS
