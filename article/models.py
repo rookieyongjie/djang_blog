@@ -1,4 +1,3 @@
-
 from django.db import models
 # 导入内建的User模型。
 from django.contrib.auth.models import User
@@ -45,6 +44,9 @@ class ArticlePost(models.Model):
 
     # 文章标题图
     avatar = models.ImageField(upload_to='article/%Y%m%d/', blank=True)
+
+    # 点赞
+    likes = models.PositiveIntegerField(default=0)
 
     # 内部类 class Meta 用于给 model 定义元数据
     class Meta:

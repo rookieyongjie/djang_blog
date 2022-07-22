@@ -9,6 +9,7 @@ import markdown
 from .forms import ArticlePostForm
 from django.contrib.auth.models import User
 from django.db.models import Q
+from django.views import View
 from django_blog.settings import LOGGING
 import logging
 
@@ -192,3 +193,12 @@ def article_update(request, id):
                    'tags': ','.join([x for x in article.tags.names()]),
                    }
         return render(request, 'article/update.html', context)
+
+
+# 点赞
+class IncreaseLikesView(View):
+    def post(self, request, *args, **kwargs):
+        article = ArticlePost.objects.get(id=kwargs.get('id'))
+        article.likes += 1
+        article.save()
+        return HttpResponse('success')
